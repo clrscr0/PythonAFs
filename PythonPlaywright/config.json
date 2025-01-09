@@ -6,7 +6,9 @@
    
     "common info" : {
       "Url" : "https://www.saucedemo.com/",
-      "UserName" : "standard_user",
-      "Password" : "secret_sauce"
+      "ValidUserName" : "standard_user",
+      "ValidPassword" : "secret_sauce",
+      "InvalidUserName" : "1standard_user",
+      "InvalidPassword" : "1secret_sauce"
     }
    }

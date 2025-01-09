@@ -3,12 +3,13 @@ from playwright.sync_api import Page, Locator
 from Pages.products_list_page import ProductsListPage
 from Pages.base_page import BasePage
 
+
 class LoginPage(BasePage):
 
-    def __init__(self, page):
+    def __init__(self, page: Page):
         super().__init__(page)
-        self._selectors = self._Selectors
-    
+        self._selectors = self._Selectors()
+
     def set_username(self, value: str):
         self.current_page.fill(self._selectors.USERNAME, value)
 
@@ -30,8 +31,8 @@ class LoginPage(BasePage):
     def get_login_button_locator(self) -> Locator:
         return self.current_page.locator(self._selectors.LOGIN_BUTTON)
 
-class _Selectors:
-    USERNAME = "#user-name"
-    PASSWORD = "#password"
-    LOGIN_BUTTON = "#login-button"
-    ERROR_MSG = "[data-test='error']"
+    class _Selectors:
+        USERNAME = "#user-name"
+        PASSWORD = "#password"
+        LOGIN_BUTTON = "#login-button"
+        ERROR_MSG = "[data-test='error']"
